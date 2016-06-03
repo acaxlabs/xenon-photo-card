@@ -1,5 +1,5 @@
 {
-  "name": "xenon-router",
+  "name": "xenon-photo-card",
   "version": "1.0",
   "description": "Creates a show hide for child elements based on url hash",
   "authors": [
@@ -8,16 +8,16 @@
   "keywords": [
     "web-components",
     "polymer",
-    "router"
+    "paper"
   ],
-  "main": "xenon-router.html",
-  "private": true,
+  "main": "xenon-photo-card.html",
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/BenefitGeek/XenonRouter.git"
+    "url": "git://github.com/BenefitGeek/xenon-photo-card.git"
   },
-  "license": "https://github.com/BenefitGeek/XenonRouter/blob/master/LICENSE.txt",
-  "homepage": "https://github.com/BenefitGeek/XenonRouter",
+  "license": "https://github.com/BenefitGeek/xenon-photo-card/blob/master/LICENSE",
+  "homepage": "https://github.com/BenefitGeek/xenon-photo-card",
   "ignore": [],
     "dependencies": {
         "polymer": "Polymer/polymer#^1.2.0"
