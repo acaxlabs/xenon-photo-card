@@ -31,7 +31,11 @@ Example:
 <dom-module id="xenon-photo-card">
     <template>
         <style>
-            :host { display: block; margin-bottom: 8px; }
+            :host { 
+                display: block; margin-bottom: 8px;
+                @apply(--paper-font-common-base);
+                @apply(--paper-card); 
+            }
             .card { display: flex; box-shadow: 0px 1px 3px #888888; border-radius: 2px; background-color:#ffffff; }
             .card #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
             .card #frame { flex: 1 1 600px; }
