@@ -10,7 +10,7 @@ do not make spacer a self-closing tag.
 
 Example:
 
-    <xenon-photo-card title="Hello Card" subhead="This card has a subhead." src="http://lorempixel.com/600/400/sports/">
+    <xenon-photo-card primary-title="Hello Card" sub-title="This card has a subhead." src="http://lorempixel.com/600/400/sports/">
             <div>Now is the time for all good men to come to the aid of their country.</div>
             <actions>
                 <paper-button>Action 1</paper-button>
@@ -59,8 +59,8 @@ Example:
         <div class="card">
             <div id="frame">
                 <div id="titlearea" hidden>
-                    <div id="title">{{title}}</div>
-                    <div id="subhead" hidden>{{subhead}}</div>
+                    <div id="title">{{primaryTitle}}</div>
+                    <div id="subhead" hidden>{{subTitle}}</div>
                 </div>
                 <div id="body">
                     <content select=":not(actions)"></content>
@@ -77,10 +77,10 @@ Example:
             is: "xenon-photo-card", 
             properties: {
                 /* Sets a title for the card. This title will have appropriate style. */
-                title: { type: String, observer: "_titleChange" },
+                primaryTitle: { type: String, observer: "_titleChange" },
                 
                 /* Sets a subtitle for the card. The subtitle is 50% grey and smaller by spec. It is not visible unless a title is provided also. */
-                subhead: { type: String, observer: "_subheadChange" },
+                subTitle: { type: String, observer: "_subheadChange" },
                 
                 /* Sets a url for the card image. */
                 src: { type: String, observer: "_srcChange" }
@@ -90,10 +90,10 @@ Example:
                 if(actions.length > 0) this.$.footer.hidden = false; 
             },
             _titleChange: function() {
-                this.$.titlearea.hidden = this.title == null || this.title == '' || this.title == undefined;
+                this.$.titlearea.hidden = this.primaryTitle == null || this.primaryTitle == '' || this.primaryTitle == undefined;
             },
             _subheadChange: function() {
-                this.$.subhead.hidden = this.subhead == null || this.subhead == '' || this.subhead == undefined;
+                this.$.subhead.hidden = this.subTitle == null || this.subTitle == '' || this.subTitle == undefined;
             },
             _srcChange: function() {
                 this.$.photo.hidden = false;
