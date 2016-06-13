@@ -14,10 +14,10 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/BenefitGeek/xenon-photo-card.git"
+    "url": "git://github.com/acaxlabs/xenon-photo-card.git"
   },
-  "license": "https://github.com/BenefitGeek/xenon-photo-card/blob/master/LICENSE",
-  "homepage": "https://github.com/BenefitGeek/xenon-photo-card",
+  "license": "https://github.com/acaxlabs/xenon-photo-card/blob/master/LICENSE",
+  "homepage": "https://github.com/acaxlabs/xenon-photo-card",
   "ignore": [],
     "dependencies": {
         "polymer": "Polymer/polymer#^1.2.0"
