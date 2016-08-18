@@ -34,12 +34,12 @@ Example:
                 @apply(--paper-font-common-base);
                 @apply(--paper-card); 
             }
-            .card { display: flex; box-shadow: 0px 1px 3px #888888; border-radius: 2px; background-color:#ffffff; }
-            .card #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
-            .card #frame { flex: 1 1 600px; }
-            .card #titlearea { padding: 16px; padding-bottom: 0px; }
-            .card #title { font-size: 18pt }
-            .card #subhead { color:grey }
+            #card { display: flex; box-shadow: 0px 1px 3px #888888; border-radius: 2px; background-color:#ffffff; }
+            #card #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
+            #card #frame { flex: 1 1 600px; }
+            #card #titlearea { padding: 16px; padding-bottom: 0px; }
+            #card #title { font-size: 18pt }
+            #card #subhead { color:grey }
             #body ::content p { margin: 0px; }
             #body ::content p:not(:last-child) { margin-bottom: 20px; }
             #footer  { padding-left:8px; padding-right:8px; padding-bottom: 8px; }
@@ -50,13 +50,13 @@ Example:
             #body { padding: 16px; }
             
             @media (max-width: 600px) {
-                .card #photo { border-bottom-right-radius: 0px; border-top-left-radius: 2px; }
-                .card { flex-direction: column-reverse; }
-                .card #photo { flex: 0 1 150px }
-                .card #frame { flex: 1 1 auto }
+                #card #photo { border-bottom-right-radius: 0px; border-top-left-radius: 2px; }
+                #card { flex-direction: column-reverse; }
+                #card #photo { flex: 0 1 150px }
+                #card #frame { flex: 1 1 auto }
             }
         </style>
-        <div class="card">
+        <div id="card">
             <div id="frame">
                 <div id="titlearea" hidden>
                     <div id="title">{{primaryTitle}}</div>
