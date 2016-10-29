@@ -1,6 +1,5 @@
 <link rel="import" href="../polymer/polymer.html"/>
 <!--
-
 `<xenon-photo-card>` is a simple but opinionated UI card with associated photo 
 that matches the Material design specification. 
     
@@ -11,15 +10,15 @@ do not make spacer a self-closing tag.
 Example:
 
     <xenon-photo-card primary-title="Hello Card" sub-title="This card has a subhead." src="http://lorempixel.com/600/400/sports/">
-            <div>Now is the time for all good men to come to the aid of their country.</div>
-            <actions>
-                <paper-button>Action 1</paper-button>
-                <paper-button>Action 2</paper-button>
-                <spacer></spacer>
-                <paper-button class="primary">Primary Action</paper-button>
-                <spacer/>
-            </actions>
-        </xenon-photo-card>
+        <div>Now is the time for all good men to come to the aid of their country.</div>
+        <actions>
+            <paper-button>Action 1</paper-button>
+            <paper-button>Action 2</paper-button>
+            <spacer></spacer>
+            <paper-button class="primary">Primary Action</paper-button>
+            <spacer/>
+        </actions>
+    </xenon-photo-card>
 
 @group Xenon Elements
 @element xenon-photo-card
@@ -89,12 +88,15 @@ Example:
                 var actions = Polymer.dom(this.$.actions).getDistributedNodes();
                 if(actions.length > 0) this.$.footer.hidden = false; 
             },
+            /* occurs when a title changes */
             _titleChange: function() {
                 this.$.titlearea.hidden = this.primaryTitle == null || this.primaryTitle == '' || this.primaryTitle == undefined;
             },
+            /* called when a subhead changes */
             _subheadChange: function() {
                 this.$.subhead.hidden = this.subTitle == null || this.subTitle == '' || this.subTitle == undefined;
             },
+            /* called when the image is changed */
             _srcChange: function() {
                 this.$.photo.hidden = false;
                 this.$.photo.style.backgroundImage = "url('" + this.src + "')"
