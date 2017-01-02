@@ -47,7 +47,7 @@ Example:
             #footer ::content actions * { flex:0 0 auto; margin:0px; font-size: small; }
             #footer ::content actions paper-icon-button { color:grey; }
             #footer ::content actions spacer { flex: 1 1 auto; }
-            #xbody { padding: 16px; }
+            #xbody ::content main { padding: 16px; }
             
             @media (max-width: 600px) {
                 #card #photo { border-bottom-right-radius: 0px; border-top-left-radius: 2px; }
@@ -59,8 +59,8 @@ Example:
         <div id="card">
             <div id="frame">
                 <div id="titlearea" hidden>
-                    <div id="title">{{primaryTitle}}</div>
-                    <div id="subhead" hidden>{{subTitle}}</div>
+                    <div id="title">{{heading}}</div>
+                    <div id="subhead" hidden>{{subHeading}}</div>
                 </div>
                 <div id="xbody">
                     <content select=":not(actions)"></content>
@@ -77,10 +77,10 @@ Example:
             is: "xenon-photo-card", 
             properties: {
                 /* Sets a title for the card. This title will have appropriate style. */
-                primaryTitle: { type: String, observer: "_titleChange" },
+                heading: { type: String, observer: "_titleChange" },
                 
-                /* Sets a subtitle for the card. The subtitle is 50% grey and smaller by spec. It is not visible unless a title is provided also. */
-                subTitle: { type: String, observer: "_subheadChange" },
+                /* Sets a subHeading for the card. The subHeading is 50% grey and smaller by spec. It is not visible unless a title is provided also. */
+                subHeading: { type: String, observer: "_subheadChange" },
                 
                 /* Sets a url for the card image. */
                 src: { type: String, observer: "_srcChange" }
@@ -90,10 +90,10 @@ Example:
                 if(actions.length > 0) this.$.footer.hidden = false; 
             },
             _titleChange: function() {
-                this.$.titlearea.hidden = this.primaryTitle == null || this.primaryTitle == '' || this.primaryTitle == undefined;
+                this.$.titlearea.hidden = this.heading == null || this.heading == '' || this.heading == undefined;
             },
             _subheadChange: function() {
-                this.$.subhead.hidden = this.subTitle == null || this.subTitle == '' || this.subTitle == undefined;
+                this.$.subhead.hidden = this.subHeading == null || this.subHeading == '' || this.subHeading == undefined;
             },
             _srcChange: function() {
                 this.$.photo.hidden = false;
