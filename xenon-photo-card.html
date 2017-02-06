@@ -28,13 +28,13 @@ Example:
 <dom-module id="xenon-photo-card">
     <template>
         <style>
-            :host {  display: block; margin-bottom: 8px; font-weight:normal; @apply(--paper-font-common-base); @apply(--paper-card); }
-            #card { display: flex; box-shadow: 0px 1px 3px #888888; border-radius: 2px; background-color:#ffffff; }
-            #card #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
-            #card #frame { flex: 1 1 600px; }
-            #card #headingarea { padding: 16px; }
-            #card #heading { font-size: 18pt; @apply(--xenon-heading-theme); }
-            #card #subhead { color:grey; @apply(--xenon-subheading-theme); }
+            :host {  display: block; margin-bottom: 8px; margin-right:8px; font-weight:normal; @apply(--paper-font-common-base); @apply(--paper-card); }
+            :host { display: flex; box-shadow: 0px 1px 3px #888888; border-radius: 2px; background-color:#ffffff; }
+            :host #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
+            :host #frame { flex: 1 1 600px; }
+            :host #headingarea { padding: 16px; padding-bottom: 0px; }
+            :host #heading { font-size: 18pt; @apply(--xenon-heading-theme); }
+            :host #subhead { color:grey; @apply(--xenon-subheading-theme); }
             #body ::content p { margin: 0px; }
             #body ::content p:not(:last-child) { margin-bottom: 20px; }
             #footer  { padding-left:8px; padding-right:8px; padding-bottom: 8px; }
@@ -45,27 +45,25 @@ Example:
             #xbody ::content main { padding: 16px; }
             
             @media (max-width: 600px) {
-                #card #photo { border-bottom-right-radius: 0px; border-top-left-radius: 2px; }
-                #card { flex-direction: column-reverse; }
-                #card #photo { flex: 0 1 150px }
-                #card #frame { flex: 1 1 auto }
+                :host #photo { border-bottom-right-radius: 0px; border-top-left-radius: 2px; }
+                :host { flex-direction: column-reverse; }
+                :host #photo { flex: 0 1 150px }
+                :host #frame { flex: 1 1 auto }
             }
         </style>
-        <div id="card">
-            <div id="frame">
-                <div id="headingarea" hidden>
-                    <div id="heading">{{heading}}</div>
-                    <div id="subhead" hidden>{{subHeading}}</div>
-                </div>
-                <div id="xbody">
-                    <content select=":not(actions)"></content>
-                </div>
-                <div id="footer" hidden>
-                    <content id="actions" select="actions" class="actions"></content>
-                </div>
+        <div id="frame">
+            <div id="headingarea" hidden>
+                <div id="heading">{{heading}}</div>
+                <div id="subhead" hidden>{{subHeading}}</div>
             </div>
-            <div id="photo" hidden></div>
+            <div id="xbody">
+                <content select=":not(actions)"></content>
+            </div>
+            <div id="footer" hidden>
+                <content id="actions" select="actions" class="actions"></content>
+            </div>
         </div>
+        <div id="photo" hidden></div>
     </template>
     <script>
         Polymer({
