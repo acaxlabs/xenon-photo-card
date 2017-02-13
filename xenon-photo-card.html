@@ -33,15 +33,15 @@ Example:
             :host #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
             :host #frame { flex: 1 1 600px; }
             :host #headingarea { padding: 16px; padding-bottom: 0px; }
-            :host #heading { font-size: 18pt; @apply(--xenon-heading-theme); }
+            :host #heading { font-size: 18pt; @apply(--xenon-heading-theme); display:flex; }
             :host #subhead { color:grey; @apply(--xenon-subheading-theme); }
             #body ::content p { margin: 0px; }
             #body ::content p:not(:last-child) { margin-bottom: 20px; }
             #footer  { padding-left:8px; padding-right:8px; padding-bottom: 8px; }
-            #footer ::content actions { display:flex; align-items:center; }
-            #footer ::content actions * { flex:0 0 auto; margin:0px; font-size: small; }
-            #footer ::content actions paper-icon-button { color:grey; }
-            #footer ::content actions spacer { flex: 1 1 auto; }
+            #footer ::content buttons { display:flex; align-items:center; }
+            #footer ::content buttons * { flex:0 0 auto; margin:0px; font-size: small; }
+            #footer ::content buttons paper-icon-button { color:grey; }
+            #footer ::content buttons spacer { flex: 1 1 auto; }
             #xbody ::content main { padding: 16px; }
             
             @media (max-width: 600px) {
@@ -53,14 +53,18 @@ Example:
         </style>
         <div id="frame">
             <div id="headingarea" hidden>
-                <div id="heading">{{heading}}</div>
+                <div id="heading">
+                    <div>{{heading}}</div>
+                    <div style="flex:1 1 auto"></div>
+                    <div><content id="actions" select="actions" class="actions"></content></div>
+                </div>
                 <div id="subhead" hidden>{{subHeading}}</div>
             </div>
             <div id="xbody">
                 <content select=":not(actions)"></content>
             </div>
             <div id="footer" hidden>
-                <content id="actions" select="actions" class="actions"></content>
+                <content id="buttons" select="buttons" class="buttons"></content>
             </div>
         </div>
         <div id="photo" hidden></div>
