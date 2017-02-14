@@ -40,7 +40,6 @@ Example:
             #footer  { padding-left:8px; padding-right:8px; padding-bottom: 8px; }
             #footer ::content buttons { display:flex; align-items:center; }
             #footer ::content buttons * { flex:0 0 auto; margin:0px; font-size: small; }
-            #footer ::content buttons paper-icon-button { color:grey; }
             #footer ::content buttons spacer { flex: 1 1 auto; }
             #xbody ::content main { padding: 16px; }
             
@@ -61,10 +60,10 @@ Example:
                 <div id="subhead" hidden>{{subHeading}}</div>
             </div>
             <div id="xbody">
-                <content select=":not(actions)"></content>
+                <content select="main"></content>
             </div>
             <div id="footer" hidden>
-                <content id="buttons" select="buttons" class="buttons"></content>
+                <content id="buttons" select="buttons"></content>
             </div>
         </div>
         <div id="photo" hidden></div>
@@ -83,8 +82,8 @@ Example:
                 src: { type: String, observer: "_srcChange" }
             }, 
             ready: function() {
-                var actions = Polymer.dom(this.$.actions).getDistributedNodes();
-                if(actions.length > 0) this.$.footer.hidden = false; 
+                var buttons = Polymer.dom(this.$.buttons).getDistributedNodes();
+                if(buttons.length > 0) this.$.footer.hidden = false; 
             },
             _headingChange: function() {
                 this.$.headingarea.hidden = this.heading == null || this.heading == '' || this.heading == undefined;
