@@ -41,6 +41,7 @@ Example:
             #footer ::content buttons { display:flex; align-items:center; }
             #footer ::content buttons * { flex:0 0 auto; margin:0px; font-size: small; }
             #footer ::content buttons spacer { flex: 1 1 auto; }
+            #actionarea ::content actions { color: gray; }
             #xbody ::content main { padding: 16px; }
             
             @media (max-width: 600px) {
@@ -55,7 +56,7 @@ Example:
                 <div id="heading">
                     <div>{{heading}}</div>
                     <div style="flex:1 1 auto"></div>
-                    <div><content id="actions" select="actions" class="actions"></content></div>
+                    <div id="actionarea"><content select="actions"></content></div>
                 </div>
                 <div id="subhead" hidden>{{subHeading}}</div>
             </div>
