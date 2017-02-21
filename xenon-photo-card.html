@@ -38,8 +38,9 @@ Example:
             #body ::content p { margin: 0px; }
             #body ::content p:not(:last-child) { margin-bottom: 20px; }
             #footer  { padding-left:8px; padding-right:8px; padding-bottom: 8px; }
-            #footer ::content buttons { display:flex; align-items:center; }
+            #footer ::content buttons { display:flex; align-items:center; padding:8px; }
             #footer ::content buttons * { flex:0 0 auto; margin:0px; font-size: small; }
+            #footer ::content buttons *:not(:last-child) { margin-right:8px; }
             #footer ::content buttons spacer { flex: 1 1 auto; }
             #actionarea ::content actions { color: gray; cursor:pointer; }
             #xbody ::content main { padding: 16px; }
