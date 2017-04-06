@@ -45,8 +45,8 @@ Example:
             #footer ::content buttons spacer { flex: 1 1 auto; }
             #actionarea ::content actions { color: gray; cursor:pointer; }
             #body { padding: 16px; }
-            .loadingbar{ visibility:visible;  --paper-progress-active-color: var(--primary-color);}
-            .notLoading { visibility:hidden;  --paper-progress-active-color: var(--primary-color);}
+            .active{ visibility:visible;  --paper-progress-active-color: var(--accent-color);}
+            .inactive { visibility:hidden;  --paper-progress-active-color: var(--accent-color);}
             
             
             @media (max-width: 600px) {
@@ -65,7 +65,7 @@ Example:
                 </div>
                 <div id="subhead" hidden>{{subHeading}}</div>
             </div>
-                <paper-progress id="loadingBar" style="width:100%" indeterminate></paper-progress>
+                <paper-progress id="active" style="width:100%" indeterminate></paper-progress>
             <div id="body">
                 <content select="main"></content>
             </div>
@@ -105,8 +105,8 @@ Example:
                 this.$.photo.style.backgroundImage = "url('" + this.src + "')"
             },
             toggleProgress: function (loading) {
-                this.toggleClass("loadingbar", loading, this.$.loadingBar);
-                this.toggleClass("notLoading", !loading, this.$.loadingBar);
+                this.toggleClass("active", loading, this.$.active);
+                this.toggleClass("inactive", !loading, this.$.active);
             }
         });
     </script>
