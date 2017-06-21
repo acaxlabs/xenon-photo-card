@@ -10,7 +10,8 @@
         <style>
            body { font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif; }
            .primary { background-color:#006dcc; color:white; }
-           .pull-right { float: right; }
+           #flexer { display:flex; }
+           #flexer > xenon-photo-card { flex: 1 1 300px }
         </style>
     </head>
     <body>
@@ -65,5 +66,31 @@
                 <paper-button class="primary">Submit</paper-button>
             </buttons>
         </xenon-photo-card>
+        <div id="flexer">
+            <xenon-photo-card heading="Aligned Actions">
+                <main>
+                    This card has less content than it's peer in the flexbox but the action button should be lined up at the bottom.
+                </main>
+                <buttons>
+                    <paper-button class="primary">Submit</paper-button>
+                </buttons>
+            </xenon-photo-card>
+            <xenon-photo-card heading="Aligned Actions">
+                <main>
+                    This card also has less content. 
+                </main>
+                <buttons>
+                    <paper-button class="primary">Submit</paper-button>
+                </buttons>
+            </xenon-photo-card>
+            <xenon-photo-card heading="Aligned Actions">
+                <main>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus feugiat leo, et pretium turpis suscipit sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse iaculis neque sed massa auctor tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla tincidunt molestie turpis, a eleifend nulla porta tincidunt. Integer quis dui posuere, commodo risus a, blandit lorem. Fusce eget aliquam mi.
+                </main>
+                <buttons>
+                    <paper-button class="primary">Submit</paper-button>
+                </buttons>
+            </xenon-photo-card>
+        </div>
     </body>
 </html>
