@@ -2,7 +2,7 @@
     <head>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-        <link rel="import" href="../xenon-card.html"/>
+        <link rel="import" href="../xenon-photo-card.html"/>
         <link rel="import" href="../../paper-button/paper-button.html"/>
         <link rel="import" href="../../iron-icon/iron-icon.html"/>
         <link rel="import" href="../../iron-icon/iron-icon.html"/>
@@ -12,11 +12,11 @@
            body { font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif; background-color:whitesmoke; }
            .primary { background-color:#006dcc; color:white; }
            #flexer { display:flex; width:100%; box-sizing: border-box;}
-           #flexer > xenon-card { flex: 1 1 500px;  }
+           #flexer > xenon-photo-card { flex: 1 1 500px;  }
         </style>
     </head>
     <body>
-        <xenon-card heading="Hello Card" sub-heading="This card has a subhead." src="http://lorempixel.com/600/400/sports/">
+        <xenon-photo-card heading="Hello Card" sub-heading="This card has a subhead." src="http://lorempixel.com/600/400/sports/">
             <main>
                 <p>
                     Now is the time for all good men to come to the aid of their country.
@@ -28,9 +28,9 @@
                 <paper-button class="primary">Primary Button</paper-button>
                 <spacer/>
             </buttons>
-        </xenon-card>
+        </xenon-photo-card>
         
-        <xenon-card heading="Title Of The Card"  src="http://lorempixel.com/600/400/technics/">
+        <xenon-photo-card heading="Title Of The Card"  src="http://lorempixel.com/600/400/technics/">
             <main>
                 <p>This card has a title but no subhead. It's using icons instead of 
                 text buttons for actions. This is generally not recommended, but it's 
@@ -44,18 +44,18 @@
                 <spacer></spacer>
                 <iron-icon icon="archive" title="archive"></iron-icon>
             </buttons>
-        </xenon-card>
+        </xenon-photo-card>
         
-        <xenon-card src="http://lorempixel.com/600/400/abstract/">
+        <xenon-photo-card src="http://lorempixel.com/600/400/abstract/">
             <main>
                 <p>
                 This card has no title. Notice how nicely this text is still vertically 
                 centered in the card? This was a pain in the ass. 
                 </p>
             </main>
-        </xenon-card>
+        </xenon-photo-card>
         
-        <xenon-card>
+        <xenon-photo-card>
             <main>
                 <p>
                 This card has no image specified. It's still working!
@@ -64,9 +64,9 @@
             <actions>
                 <iron-icon icon="settings" title="settings"></iron-icon>
             </actions>
-        </xenon-card>
+        </xenon-photo-card>
         
-        <xenon-card heading="Action Actions" src="http://lorempixel.com/600/400/people/">
+        <xenon-photo-card heading="Action Actions" src="http://lorempixel.com/600/400/people/">
             <main>
                 <p>
                 This card has a title and action buttons pushed over to the 
@@ -84,9 +84,9 @@
                 <paper-button>Cancel</paper-button>
                 <paper-button class="primary">Submit</paper-button>
             </buttons>
-        </xenon-card>
+        </xenon-photo-card>
         <div id="flexer">
-            <xenon-card heading="Aligned Actions">
+            <xenon-photo-card heading="Aligned Actions">
                 <main>
                     <p>
                     This card has less content than it's peer in the flexbox but the action button should be lined up at the bottom.
@@ -95,25 +95,25 @@
                 <buttons>
                     <paper-button class="primary">Submit</paper-button>
                 </buttons>
-            </xenon-card>
-            <xenon-card heading="Aligned Actions">
+            </xenon-photo-card>
+            <xenon-photo-card heading="Aligned Actions">
                 <main>
                     <p>This card also has less content.</p>
                 </main>
                 <buttons>
                     <paper-button class="primary">Submit</paper-button>
                 </buttons>
-            </xenon-card>
-            <xenon-card heading="Aligned Actions">
+            </xenon-photo-card>
+            <xenon-photo-card heading="Aligned Actions">
                 <main>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus feugiat leo, et pretium turpis suscipit sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse iaculis neque sed massa auctor tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla tincidunt molestie turpis, a eleifend nulla porta tincidunt. Integer quis dui posuere, commodo risus a, blandit lorem. Fusce eget aliquam mi.</p>
                 </main>
                 <buttons>
                     <paper-button class="primary">Submit</paper-button>
                 </buttons>
-            </xenon-card>
+            </xenon-photo-card>
         </div>
-        <xenon-card heading="Lots of Headers" src="http://lorempixel.com/600/400/people/">
+        <xenon-photo-card heading="Lots of Headers" src="http://lorempixel.com/600/400/people/">
                 <actions>
                     <iron-icon icon="settings" title="settings"></iron-icon>
                 </actions>
@@ -131,6 +131,6 @@
                 <buttons>
                     <paper-button class="primary">Submit</paper-button>
                 </buttons>
-            </xenon-card>
+            </xenon-photo-card>
     </body>
 </html>
