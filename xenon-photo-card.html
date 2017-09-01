@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-material/paper-material.html">
+<link rel="import" href="../paper-progress/paper-progress.html">
 <link rel="import" href="../xenon-layout/xenon-header.html">
 <link rel="import" href="../paper-styles/shadow.html">
 <link rel="import" href="../paper-material/paper-material-shared-styles.html">
@@ -10,7 +11,7 @@
             :host([animated]) { @apply(--shadow-transition); }
             :host { display:flex; margin:0px 4px 8px 4px; box-sizing:border-box; background-color:white; }
             xenon-header { padding: 16px 16px 0px 16px; }
-            #frame { flex: 1 1 600px; display:flex; flex-direction:column; }
+            #frame { flex: 1 1 600px; display:flex; flex-direction:column; box-sizing:border-box; }
             #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
             #body { flex: 1 1 auto; }
             #body ::content main { padding:0px 16px 0px 16px; }
@@ -32,6 +33,7 @@
                     </actions>
                 </xenon-header>
             </template>
+            <paper-progress style="width:100%;" hidden="[[!loading]]" indeterminate></paper-progress>
             <div id="body">
                 <content select="main"></content>
             </div>
@@ -73,8 +75,10 @@
             * @type boolean
             * @default false
             */
-            animated: { type: Boolean, reflectToAttribute: true, value: false }
-        },
+            animated: { type: Boolean, reflectToAttribute: true, value: false },
+            /* Sets whether the loading bar should be displayed. */
+            loading: { type: Boolean, notify: true, value: false }
+    },
         _srcChange: function() {
             this.$.photo.hidden = false;
             this.$.photo.style.backgroundImage = "url('" + this.src + "')"
