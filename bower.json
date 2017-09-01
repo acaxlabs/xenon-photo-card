@@ -1,7 +1,7 @@
 {
   "name": "xenon-photo-card",
   "version": "1.0",
-  "description": "Creates a show hide for child elements based on url hash",
+  "description": "Creates a material designed card",
   "authors": [
     "ACA[X]Labs"
   ],
@@ -20,7 +20,13 @@
   "homepage": "https://github.com/acaxlabs/xenon-photo-card",
   "ignore": [],
     "dependencies": {
-        "polymer": "Polymer/polymer#^1.2.0"
+        "polymer": "Polymer/polymer#^1.2.0",
+        "paper-material": "PolymerElements/paper-material#^1.x.x",
+        "paper-progress": "PolymerElements/paper-progress#^1.x.x",
+        "paper-styles": "PolymerElements/paper-styles#^1.x.x",
+        "xenon-layout": "https://github.com/acaxlabs/xenon-layout.git"
+
+
     },
      "devDependencies": {
   }
