@@ -10,7 +10,7 @@
         <style>
             :host([animated]) { @apply(--shadow-transition); }
             :host { display:flex; margin:0px 4px 8px 4px; box-sizing:border-box; background-color:white; }
-            xenon-header { padding: 16px 16px 0px 16px; }
+            xenon-header { padding: 16px 8px 0px 8px; }
             #frame { flex: 1 1 600px; display:flex; flex-direction:column; box-sizing:border-box; }
             #photo { flex: 1 1 200px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; background-size: cover; background-position-x: center; background-position-y: center; }
             #body { flex: 1 1 auto; }
@@ -22,7 +22,7 @@
             @media (max-width: 600px) {
                 :host { flex-direction: column-reverse; }
                 #photo { flex: 0 1 150px; border-bottom-right-radius: 0px; border-top-left-radius: 2px; }
-                #frame { flex: 1 1 auto }
+                #frame { flex: 1 1 auto; }
             }
         </style>
         <div id="frame">
